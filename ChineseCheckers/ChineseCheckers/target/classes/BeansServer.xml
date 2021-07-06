@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="chineseServer"
+		class="com.Mateusz.Lista4.Server.ChineseCheckersServer">
+		<!-- players -->
+		<constructor-arg
+			value="#{ systemProperties['players'] }" />
+		<constructor-arg ref="game" />
+	</bean>
+
+	<bean id="game" class="com.Mateusz.Lista4.Server.Game"
+		init-method="setup">
+		<property name="players"
+			value="#{ systemProperties['players'] }" />
+		<property name="board" ref="board" />
+		<property name="mediator" ref="mediator" />
+		<property name="previousMoveID" value="-1" />
+		<property name="indexTouch" value="-1" />
+		<property name="indexMove" value="-1" />
+		<property name="left" value="0" />
+		<property name="jumpFlag" value="0" />
+		<property name="deuce" value="0" />
+		<property name="movesJDBC" ref="movesJDBC" />
+		<property name="connected" value="0" />
+		<property name="mode" value="" />
+	</bean>
+
+	<bean id="board" class="com.Mateusz.Lista4.Client.Design.Board"
+		init-method="setup">
+		<property name="indexTouch" value="-1" />
+		<property name="chooser" ref="chooser" />
+		<property name="boardDesignBuilder" ref="boardDesignBuilder" />
+		<!-- players -->
+		<property name="players"
+			value="#{ systemProperties['players'] }" />
+	</bean>
+
+	<bean id="chooser"
+		class="com.Mateusz.Lista4.Client.Design.Chooser">
+	</bean>
+
+	<bean id="boardDesignBuilder"
+		class="com.Mateusz.Lista4.Client.Design.NormalBoard">
+	</bean>
+
+	<bean id="mediator" class="com.Mateusz.Lista4.Server.GameMediator">
+	</bean>
+
+	<bean id="movesJDBC"
+		class="com.Mateusz.Lista4.Server.JDBC.MovesJDBC">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/ChineseCheckers?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;sslMode=DISABLED" />
+		<property name="username" value="root" />
+		<property name="password" value="Casillas123" />
+	</bean>
+
+
+</beans>

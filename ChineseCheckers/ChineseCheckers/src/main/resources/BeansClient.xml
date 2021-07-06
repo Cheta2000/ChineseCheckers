@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="chineseClient"
+		class="com.Mateusz.Lista4.Client.ChineseCheckersClient"
+		init-method="init">
+		<property name="indexTouch" value="-1" />
+		<property name="indexMove" value="-1" />
+		<property name="jumpFlag" value="0" />
+		<property name="counter" value="0" />
+		<property name="board" ref="board" />
+	</bean>
+
+	<bean id="board" class="com.Mateusz.Lista4.Client.Design.Board">
+		<property name="indexTouch" value="-1" />
+		<property name="chooser" ref="chooser" />
+		<property name="boardDesignBuilder" ref="boardDesignBuilder" />
+	</bean>
+
+	<bean id="chooser"
+		class="com.Mateusz.Lista4.Client.Design.Chooser">
+	</bean>
+
+	<bean id="boardDesignBuilder"
+		class="com.Mateusz.Lista4.Client.Design.NormalBoard">
+	</bean>
+</beans>

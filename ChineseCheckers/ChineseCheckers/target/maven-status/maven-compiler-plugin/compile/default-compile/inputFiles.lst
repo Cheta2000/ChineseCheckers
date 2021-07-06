@@ -1,0 +1,11 @@
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/App.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Server/Game.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/Design/AbstractFactory.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Server/GameMediator.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/Design/Board.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/ChineseCheckersClient.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/Design/Ellipse.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/Design/BoardDesignBuilder.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Client/Design/BoardDesign.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Server/Exception/IllegalMoveException.java
+/home/mateusz/Lab5/ChineseCheckers/src/main/java/com/Mateusz/Lista4/Server/ChineseCheckersServer.java
